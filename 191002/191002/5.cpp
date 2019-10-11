@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 int main()
 {
@@ -73,6 +74,96 @@ int main()
 
 	//후치
 	iNumber++;
+
+	if ((iBuf & iAttack) != 0)
+	{
+		cout << "Attack 버프가 있습니다." << endl;
+	}
+
+	if ((iBuf & iArmor )!= 0)
+	{
+		cout << "Armor 버프가 있습니다." << endl;
+	}
+
+	if ((iBuf & iHP) != 0)
+	{
+		cout << "HP 버프가 있습니다." << endl;
+	}
+
+	if ((iBuf & iMP) != 0)
+	{
+		cout << "MP 버프가 있습니다." << endl;
+	}
+	if ((iBuf & iCritical) != 0)
+	{
+		cout << "Critical 버프가 있습니다." << endl;
+	}
+
+	cout << "숫자를 입력하세요 : ";
+	cin >> iNumber;
+
+	if (10 <= iNumber && iNumber <= 20)
+		cout << "10~20 사이의 숫자입니다." << endl;
+	else if (21 <= iNumber && iNumber <= 30)
+		cout << "10~20 사이의 숫자입니다." << endl;
+	else if (31 <= iNumber && iNumber <= 40)
+		cout << "10~20 사이의 숫자입니다." << endl;
+	else
+		cout << "그 외의 숫자입니다." << endl;
+
+
+	//난수 발생
+	srand((unsigned int)time(0));
+
+	cout << rand()%100 << endl;
+	cout << rand() % 100 << endl;
+	cout << (rand() % 101 + 100) << endl;
+	cout << (rand() % 10000 / 100.f) << endl;
+
+
+	
+	int iUpgrade = 0;
+	cout << "Upgrade 기본 수치를 입력하세요 : ";
+	cin >> iUpgrade;
+
+	//강화 확률을 구한다.
+	float	fPercent = rand() % 10000 / 100.f;
+
+	//강화 확률 : 업그레이드가 0~3 : 100% 성공 4~6 : 40% 7~9 : 10%
+	//10~13 : 1% 14~15 : 0.01%
+	cout << "Upgrade : " << iUpgrade << endl;
+	cout << "Percent : " << fPercent << endl;
+
+	if (iUpgrade <= 3)
+		cout << "강화 성공" << endl;
+	else if (4 <= iUpgrade && iUpgrade <= 6)
+	{
+		if (fPercent < 40.f)
+			cout << "강화 성공" << endl;
+		else
+			cout << "강화 실패" << endl;
+	}
+	else if (7 <= iUpgrade && iUpgrade <= 9)
+	{
+		if (fPercent < 10.f)
+			cout << "강화 성공" << endl;
+		else
+			cout << "강화 실패" << endl;
+	}
+	else if (10 <= iUpgrade && iUpgrade <= 13)
+	{
+		if (fPercent < 1.f)
+			cout << "강화 성공" << endl;
+		else
+			cout << "강화 실패" << endl;
+	}
+	else if (14 <= iUpgrade && iUpgrade <= 15)
+	{
+		if (fPercent < 0.01f)
+			cout << "강화 성공" << endl;
+		else
+			cout << "강화 실패" << endl;
+	}
 
 	return 0;
 }

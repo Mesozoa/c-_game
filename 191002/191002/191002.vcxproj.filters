@@ -18,5 +18,14 @@
     <ClCompile Include="5.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="로또.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="야구 게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="숫자퍼즐게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
